@@ -13,7 +13,7 @@ app.use(cors());
 
 const configuration = new Configuration({
     organization: "org-juPDbVJBTqkDI8F3nZcwhrzB",
-    apiKey: "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"
+    apiKey: "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"
 });
 
 const openai = new OpenAIApi(configuration);
@@ -33,7 +33,10 @@ app.post("/", async (req, res) => {
 
     });
 
-    res.json({
+    // res.json({
+    //     output: result.data.choices[0].message,
+    // })
+    res.send({
         output: result.data.choices[0].message,
     })
 })
